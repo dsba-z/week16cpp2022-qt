@@ -4,22 +4,22 @@
 
 RenderArea::RenderArea(QWidget* parent)
     : QWidget(parent),
-      levels(2)
+      _levels(2)
 {
 
 }
 
 void RenderArea::setLevels(int lvls)
 {
-    levels = lvls;
+    _levels = lvls;
     
-    // update() replains the widget on next frame
+    // update() repaints the widget on the next frame
     // If you change something visual about a widget, only
     // internal variables get changed, but you still
     // see the old visuals.
     // This function recalculates and redraws the look
     // of a widget.
-    // https://doc.qt.io/qt-5/qwidget.html#update
+    // https://doc.qt.io/qt-6/qwidget.html#update
     update();
 }
 
@@ -51,7 +51,7 @@ void RenderArea::paintEvent(QPaintEvent* /* event */)
     
     painter.drawRect(0, 0, width(), newHeight);
     
-    if (levels > 1)
+    if (_levels > 1)
     {
         //               x                y                width       height
         painter.drawRect(0,               newHeight * 2, width() / 3, newHeight);

@@ -12,7 +12,7 @@ public:
     void setLevels(int lvls);
 
 protected:
-    int levels;
+    int _levels;
     void paintEvent(QPaintEvent* event) override;
 
 signals:

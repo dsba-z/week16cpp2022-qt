@@ -1,5 +1,5 @@
-# DSBA Introduction to Programming // Workshop 31
-Spring semester 2021/22
+# DSBA Introduction to Programming // Workshops 31-32
+Spring semester 2022/23
 
 # Qt
 
@@ -9,9 +9,9 @@ Qt Widgets applications introduce several new topics and concepts.
 2. UI designer.
 3. Widgets and their hierarchy.
 
-All libraries, needed to make Qt applications are available in the Qt source package that you have if you installed Qt Creator. If you don't have Qt Creator and don't want to use it, you can still install only the source package (the libraries) here - https://www.qt.io/offline-installers.
+A brief guide on how to install Qt libraries: https://github.com/dsba-z/cpp-install-guide/blob/master/qt-guide.md
 
-
+You may install Qt Creator or just base libraries.
 # UI design
 
 There are two main ways to design user interface in Qt.
@@ -19,11 +19,11 @@ There are two main ways to design user interface in Qt.
 1. (Default) Use Qt Designer, graphically modify a .ui file, convert it to code and connect it to your project.
 2. Use code directly.
 
-In example projects and in the default Qt Widgets project you have a file `mainwindow.ui`. This file describes user interface of your program and it can be modified using graphical tools: dragging and dropping buttons, moving them around.
+In example projects and in the default Qt Widgets project you have a file `mainwindow.ui`. This file describes user interface of your program, and it can be modified using graphical tools: dragging and dropping buttons, moving them around.
 
 When you build your project, this file gets converted to a C++ code file `ui_mainwindow.h`. You can see the C++ file getting included in `mainwindow.cpp`.
 
-By default all interface elements are child object of the root element `ui`. The line `ui->setupUi(this);` connects your code (`mainwindow.cpp`) and generated UI code (`ui_mainwindow.h`).
+By default, all interface elements are child object of the root element `ui`. The line `ui->setupUi(this);` connects your code (`mainwindow.cpp`) and generated UI code (`ui_mainwindow.h`).
 
 After you run this line, you can access UI elements like this;
 
@@ -31,7 +31,7 @@ After you run this line, you can access UI elements like this;
     QString buttonText = ui->myButton->text();
 ```
 
-This line gets accesses a button object called "myButton" and call its method `text()`. The method returns the button's label which is then saved to a variable `buttonText`.
+This line accesses a button object called "myButton" and calls its method `text()`. The method returns the button's label which is then saved to a variable `buttonText`.
 
 If you want to change the label, you can do it in code:
 
@@ -62,7 +62,7 @@ Modify the interface using Qt Designer. Add a button and change its label text.
 
 Modify the interface using code. Change some text (button label, text label, window title) to something else.
 
-Change font size for text label to 10.
+Change font size for the text label to 10.
 
 To change font size:
 
@@ -90,9 +90,8 @@ When you make your class, you must make a constructor that takes `QWidget* paren
 
 As your class is a custom one, it doesn't exist in Designer, so you can only add it to the program through code, manually.
 
-A `QPainter` object can be used to draw graphical primitives (lines, rectrangles, circles) in Widgets. There is an example in `renderarea.cpp` that draws two levels of the Cantor fractal.
+A `QPainter` object can be used to draw graphical primitives (lines, rectangles, circles) in Widgets. There is an example in `renderarea.cpp` that draws two levels of the Cantor fractal.
 
-User interaction will be considered on later workshops.
 
 ### Tasks
 
